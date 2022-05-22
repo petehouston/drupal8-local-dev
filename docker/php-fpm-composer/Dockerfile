@@ -44,7 +44,8 @@ ADD xdebug.ini  /etc/php7.4/conf.d/
 
 RUN echo "upload_max_filesize = 500M\n" \
          "post_max_size = 500M\n" \
-         > /usr/local/etc/php/conf.d/maxsize.ini
+         "memory_limit = -1" \
+          > /usr/local/etc/php/conf.d/maxsize.ini
 
 RUN mkdir -p $HOME/.composer
 
